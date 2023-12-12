@@ -1,3 +1,6 @@
+using AdventOfCode.Year2023.Day8;
+using FluentAssertions;
+
 namespace AdventOfCode.Year2023.Tests;
 
 public class Day8
@@ -10,9 +13,9 @@ public class Day8
         var expectedNode = new Node(expectedKey, expectedLeft, expectedRight);
         
         // Act
-        // var actualNode = 
+        var actualNode = Node.ParseFromNodeString(nodeInput);
 
         // Assert
-
+        actualNode.Should().BeEquivalentTo(expectedNode);
     }
 }
